@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PumAmor: Conecta con gente nueva de manera divertida y segura.">
+  <title>PumAmor</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <img src="logo-acatodo.png" alt="Logo AcaTodo" id="logo">
+    <div id="icono-notificaciones">🔔</div>
+    <button id="boton-usuario" onclick="window.location.href='inicio_sesion.html';">👤</button>
+  </header>
+  <main class="profile-container">
+    <!-- Perfil de ejemplo -->
+    <article class="profile-card">
+      <img src="img/tinder/ryan.jpg" alt="Ryan Gosling" class="profile-photo">
+      <img src="img/tinder/ryan.jpg" alt="Ryan Lifestyle" class="profile-lifestyle-photo">
+      <div class="profile-info">
+        <h2>Ryan Gosling</h2>
+        <p>33 años</p>
+        <p>Estudiante de Matemáticas y Computación</p>
+        <button onclick="toggleDescription(this)">Ver más</button>
+        <p class="profile-description">¡Hola Soy Ryan y aun no termino la carrera pero soy guapo, vamos a jarras?</p>
+      </div>
+      <button class="message-btn">Mensaje</button>
+    </article>
+    <!-- Perfil de ejemplo -->
+    <article class="profile-card">
+      <img src="img/tinder/ana.jpg" alt="Ana de Armas" class="profile-photo">
+      <img src="img/tinder/ana.jpg" alt="Ana foto" class="profile-lifestyle-photo">
+      <div class="profile-info">
+        <h2>Ana Taylor</h2>
+        <p>25 años</p>
+        <p>Estudiante de Comunicacion</p>
+        <button onclick="toggleDescription(this)">Ver más</button>
+        <p class="profile-description"> Se que te gusto, invitame a salir :)</p>
+      </div>
+      <button class="message-btn">Mensaje</button>
+    </article>
+    <!-- Perfil de ejemplo -->
+    <article class="profile-card">
+      <img src="img/tinder/emma.jpg" alt="Emma Stone" class="profile-photo">
+      <img src="img/tinder/emma.jpg" alt="EmmaLifestyle" class="profile-lifestyle-photo">
+      <div class="profile-info">
+        <h2>Ryan Gosling</h2>
+        <p>33 años</p>
+        <p>Estudiante de psicologia</p>
+        <button onclick="toggleDescription(this)">Ver más</button>
+        <p class="profile-description">Me gusta el cine</p>
+      </div>
+      <button class="message-btn">Mensaje</button>
+    </article>
+    <!-- Perfil de ejemplo -->
+    <article class="profile-card">
+      <img src="img/tinder/timoty.jpg" alt="Timothee" class="profile-photo">
+      <img src="img/tinder/timoty.jpg" alt="Timothee Lifestyle" class="profile-lifestyle-photo">
+      <div class="profile-info">
+        <h2>Ryan Gosling</h2>
+        <p>33 años</p>
+        <p>Estudiante de Arquitectura</p>
+        <button onclick="toggleDescription(this)">Ver más</button>
+        <p class="profile-description"> Soy Timoti pero todos me dicen Tomate Salamt</p>
+      </div>
+      <button class="message-btn">Mensaje</button>
+    </article>
+
+    <!-- Agrega más perfiles siguiendo el mismo formato -->
+  </main>
+  <script>
+    function toggleDescription(button) {
+      var description = button.nextElementSibling;
+      if (description.style.display === 'block') {
+        description.style.display = 'none';
+        button.textContent = 'Ver más';
+      } else {
+        description.style.display = 'block';
+        button.textContent = 'Ver menos';
+      }
+    }
+  </script>
+</body>
+</html>
