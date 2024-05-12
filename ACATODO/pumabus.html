@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumabus - Horarios y Rutas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            width: 100px;
+        }
+        #map {
+            height: 400px; /* Adjust height as needed */
+            width: 100%; /* Map width */
+            margin-bottom: 20px;
+        }
+        .bus-info {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .bus-number {
+            color: #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .metro-image { width: 100px; height: auto; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo-acatodo.png" alt="Logo AcaTodo" id="logo">
+        <div id="icono-notificaciones">🔔</div>
+    </header>
+    <main>
+        <div id="map"></div>
+        <h1>Horarios del Pumabus</h1>
+        <div class="bus-info">
+            <h2><span class="bus-number">Bus 1</span> - muy lleno</h2>
+            <p id="timer1">Cargando...</p>
+        </div>
+        <div class="bus-info">
+            <h2><span class="bus-number">Bus 2</span> - lleno</h2>
+            <p id="timer2">Cargando...</p>
+        </div>
+        <div class="bus-info">
+            <h2><span class="bus-number">Bus 3</span> - vacío</h2>
+            <p id="timer3">Cargando...</p>
+        </div>
+        <div class="bus-info">
+            <h2><span class="bus-number">Bus 4</span></h2>
+            <p id="timer4">Cargando...</p>
+        </div>
+    </main>
+    <footer>
+        <!-- Contenido del footer si es necesario -->
+    </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([19.4326, -99.1332], 11);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const timers = [
+                { id: 'timer1', seconds: 5 * 60 },
+                { id: 'timer2', seconds: 12 * 60 },
+                { id: 'timer3', seconds: 22 * 60 },
+                { id: 'timer4', seconds: 30 * 60 + 1 }
+            ];
+
+            timers.forEach(timer => {
+                setInterval(() => {
+                    if (timer.seconds > 0) {
+                        timer.seconds--;
+                        const minutes = Math.floor(timer.seconds / 60);
+                        const seconds = timer.seconds % 60;
+                        const timeString = `${minutes} min ${seconds} sec`;
+                        document.getElementById(timer.id).textContent = `Hora de salida: en ${timeString}`;
+                    } else {
+                        document.getElementById(timer.id).textContent = "El bus ha salido.";
+                    }
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

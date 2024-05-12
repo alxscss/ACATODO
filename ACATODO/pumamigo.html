@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PumAmigo - Conecta con Amigos</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <img src="logo-acatodo.png" alt="Logo AcaTodo" id="logo" style="width: 80px; height: auto;">
+    <div id="icono-notificaciones">🔔</div>
+    <button id="boton-usuario" onclick="window.location.href='inicio_sesion.html';">👤</button>
+  </header>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Swiper slides con perfiles -->
+      <div class="swiper-slide">
+        <img src="img/tinder/ryan.jpg" alt="Ryan" class="profile-photo">
+        <div class="profile-details">
+          <h4>Ryan Gosling</h4>
+          <p>Apasionado de los viajes y la lectura. Ingeniero con un corazón aventurero.</p>
+        </div>
+        <div class="profile-actions">
+            <button class="action-btn like"><i class="fas fa-heart"></i> Amistad</button>
+            <input type="text" class="message-input" placeholder="Envía un mensaje...">
+            <button class="action-btn send-message"><i class="fas fa-paper-plane"></i> Enviar</button>  
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="img/tinder/emma.jpg" alt="Emma" class="profile-photo">
+        <div class="profile-details">
+          <h4>Emma Stone</h4>
+          <p>Viajera apasionada y profesional del marketing. Amante de las aventuras espontáneas y los festivales de música.</p>
+        </div>
+        <div class="profile-actions">
+            <button class="action-btn like"><i class="fas fa-heart"></i> Amistad</button>
+            <input type="text" class="message-input" placeholder="Envía un mensaje...">
+            <button class="action-btn send-message"><i class="fas fa-paper-plane"></i> Enviar</button>
+          
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="img/tinder/ana.jpg" alt="Ana" class="profile-photo">
+        <div class="profile-details">
+          <h4>Ana de Armas</h4>
+          <p>Amante de los animales y veterinaria. Disfruto del yoga, la cocina vegetariana y el activismo por causas justas.</p>
+        </div>
+        <div class="profile-actions">
+            <button class="action-btn like"><i class="fas fa-heart"></i> Amistad</button>
+            <input type="text" class="message-input" placeholder="Envía un mensaje...">
+            <button class="action-btn send-message"><i class="fas fa-paper-plane"></i> Enviar</button>
+          
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="img/tinder/timoty.jpg" alt="Timothée" class="profile-photo">
+        <div class="profile-details">
+          <h4>Timothée Chalamet</h4>
+          <p>Explorador urbano y soñador empedernido. Ingeniero y músico aficionado, siempre en busca de la próxima aventura culinaria.</p>
+        </div>
+        <div class="profile-actions">
+            <button class="action-btn like"><i class="fas fa-heart"></i> Amistad</button>
+            <input type="text" class="message-input" placeholder="Envía un mensaje...">
+            <button class="action-btn send-message"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </div>
+      </div>
+      <!-- Agrega más slides según necesites -->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  </script>
+</body>
+</html>

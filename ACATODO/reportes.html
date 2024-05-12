@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes Acatlán - AcaTodo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <img src="logo-acatodo.png" alt="Logo AcaTodo" id="logo">
+        <div id="icono-notificaciones">🔔</div>
+    </header>
+    <main>
+        <section id="reportes">
+            <h2>Reportes Acatlán</h2>
+            <form id="form-reporte" action="#" method="POST">
+                <label for="descripcion-reporte">Ingresa tu reporte:</label>
+                <textarea id="descripcion-reporte" rows="4" required></textarea>
+                
+                <label for="salon-reporte">Salón donde se realizará:</label>
+                <input type="text" id="salon-reporte" required>
+                
+                <label for="carrera-reporte">Carrera:</label>
+                <input type="text" id="carrera-reporte" required>
+                
+                <button type="button" id="enviar-reporte" onclick="confirmarEnvio()">Enviar Reporte</button>
+            </form>
+        </section>
+    </main>
+    <script src="Acatodo.js"></script>
+</body>
+</html>
